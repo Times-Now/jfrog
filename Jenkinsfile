@@ -10,13 +10,13 @@ node {
     }
  
     stage ('Code Build') {
-       // rtMaven.tool = 'maven-3.6.1' // Tool name from Jenkins configuration
-       // rtMaven.run pom: 'pom.xml', goals: 'clean compile'
+       rtMaven.tool = 'maven-3.6.1' // Tool name from Jenkins configuration
+        rtMaven.run pom: 'pom.xml', goals: 'clean compile'
     }
     
     stage ('UnitTest') {
-       // rtMaven.tool = 'maven-3.6.1' // Tool name from Jenkins configuration
-        //rtMaven.run pom: 'pom.xml', goals: 'test'
+        rtMaven.tool = 'maven-3.6.1' // Tool name from Jenkins configuration
+        rtMaven.run pom: 'pom.xml', goals: 'test'
     }
     
     stage('SonarQube Analysis') {
